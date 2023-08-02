@@ -27,3 +27,46 @@ Please, provide
 -	Readme file with installation guides.
 -	An automated build.
 
+Configuration
+Programming language: Java
+Framework: Spring Boot
+Database: in-memory H2
+Automated build: Apache Maven
+
+Postman
+
+Add gateways
+POST : http://localhost:8080/gateways/
+
+{
+    "ipv4Address":"192.168.1.1",
+    "name":"Momar",
+    "serialNumber" : "GTW-001"
+}
+
+All gateways without device
+
+GET : http://localhost:8080/gateways/
+
+Add device to a gateway
+
+POST : http://localhost:8080/gateways/{gatewayId}/devices/
+
+{
+    "created":"2023-08-02T11:31:02.441+0000",
+    "status":"online",
+    "uid" : 1,
+    "vendor": "Iphone"
+}
+
+Remove device from a gateway
+
+DELETE : http://localhost:8080/gateways/{gatewayId}/devices/{deviceId}
+
+Details for a single gateway
+GET : http://localhost:8080/gateways/{gatewayId}/devices/
+
+GET ALL GATEWAYS WITH DEVICE 
+
+GET : http://localhost:8080/gateways/withdevice
+
